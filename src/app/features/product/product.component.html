@@ -57,20 +57,11 @@
   </mat-card-header>
   <br>
   <mat-card-content>
-    <div class="div-row">
-      Ingresos (con IVA): {{estadisticas?.ingresos}}
-    </div>
-    <br>
-    <div class="div-row">
-      Producto más vendido: {{estadisticas?.productoMasVendido}}
-    </div>
-    <br>
-    <div class="div-row">
-      Producto menos vendido: {{estadisticas?.productoMenosVendido}}
-    </div>
-    <br>
-    <div class="div-row">
-      Promedio: {{estadisticas?.promedio}}
-    </div>
+    <mat-list>
+      <mat-list-item> <b>Ingresos (con IVA):</b> {{estadisticas?.ingresos}}</mat-list-item>
+      <mat-list-item> <b>Producto más vendido:</b> {{estadisticas?.productoMasVendido}}</mat-list-item>
+      <mat-list-item> <b>Producto menos vendido:</b> {{estadisticas?.productoMenosVendido}}</mat-list-item>
+      <mat-list-item> <b>Promedio:</b> {{estadisticas?.promedio}}</mat-list-item>
+    </mat-list>
   </mat-card-content>
 </mat-card>
