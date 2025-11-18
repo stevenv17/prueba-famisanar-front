@@ -1,0 +1,20 @@
+<h2 mat-dialog-title>{{dialogTitle}}</h2>
+<mat-dialog-content>
+  <form [formGroup]="form">
+    <div class="div-row">
+      <div class="div-column-8">
+        <mat-form-field class="field-full-width">
+          <mat-label>Cantidad</mat-label>
+          <input matInput placeholder="Cantidad" formControlName="cantidad">
+          <mat-error *ngFor="let error of mapErrors(getFormControl('cantidad'), 'Cantidad')">
+            {{ error }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="save()">Guardar</button>
+  <button mat-button (click)="close()">Cerrar</button>
+</mat-dialog-actions>

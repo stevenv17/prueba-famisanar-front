@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* Definición del contenedor de fila (Row container) usando Flexbox */
+.div-row {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
+  width: 100%;
+  box-sizing: border-box; /* Asegura que el padding no añada ancho extra */
+}
+
+/* Clases de columnas proporcionales */
+/* El sistema se basa en 12 unidades (como Bootstrap) */
+
+.div-column-1 { flex: 0 0 8.33%; max-width: 8.33%; padding: 0 8px; } /* 1/12 */
+.div-column-2 { flex: 0 0 16.66%; max-width: 16.66%; padding: 0 8px; } /* 2/12 */
+.div-column-3 { flex: 0 0 25%; max-width: 25%; padding: 0 8px; } /* 3/12 */
+.div-column-4 { flex: 0 0 33.33%; max-width: 33.33%; padding: 0 8px; } /* 4/12 */
+.div-column-6 { flex: 0 0 50%; max-width: 50%; padding: 0 8px; } /* 6/12 = mitad */
+.div-column-8 { flex: 0 0 66.66%; max-width: 66.66%; padding: 0 8px; } /* 8/12 */
+.div-column-10 { flex: 0 0 83.33%; max-width: 83.33%; padding: 0 8px; } /* 10/12 */
+.div-column-11 { flex: 0 0 91.66%; max-width: 91.66%; padding: 0 8px; } /* 11/12 */
+/* ... */
+.div-column-12 { flex: 0 0 100%; max-width: 100%; padding: 0 8px; } /* 12/12 = ancho completo */
+
+.field-full-width {
+  width: 100%;
+}
+
+.div-button {
+  display: flex;
+  flex-wrap: wrap; // Permite que los elementos pasen a la siguiente línea si no caben
+  box-sizing: border-box; // Asegura que el padding no añada ancho extra
+  justify-content: flex-end; /* alinea a la derecha horizontalmente */
+  padding: 0 8px;
+  gap: 10px; 
+}
