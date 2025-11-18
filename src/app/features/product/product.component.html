@@ -49,3 +49,23 @@
   </mat-card-footer>
   <br>
 </mat-card>
+
+<br>
+<mat-card appearance="outlined">
+  <mat-card-content>Cálculos</mat-card-content>
+  <br>
+  <mat-card-content>
+    <div class="div-row">
+      Ingresos: {{estadisticas?.ingresos}}
+    </div>
+    <div class="div-row">
+      Producto más vendido: {{estadisticas?.productoMasVendido}}
+    </div>
+    <div class="div-row">
+      Producto menos vendido: {{estadisticas?.productoMenosVendido}}
+    </div>
+    <div class="div-row">
+      Promedio: {{estadisticas?.promedio}}
+    </div>
+  </mat-card-content>
+</mat-card>

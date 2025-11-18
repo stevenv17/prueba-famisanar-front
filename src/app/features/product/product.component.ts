@@ -4,6 +4,7 @@ import { ProductService } from '../../services/product.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ProductDialogComponent } from '../product-dialog/product-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { CalculosService } from '../../services/calculos.service';
 
 @Component({
   selector: 'app-product',
@@ -17,12 +18,15 @@ export class ProductComponent {
 
   dataSource = [];
   displayedColumns: string[] = ['nombre', 'cantidad', 'iva', 'precio', 'pedido', 'operaciones'];
+  estadisticas: any = {};
 
   constructor(
     private productService: ProductService,
+    private calculosService: CalculosService,
     private snackBar: MatSnackBar
   ) {
     this.getProductList();
+    this.getEstadisticas();
   }
 
   openDialog(data = {}): void {
@@ -35,6 +39,7 @@ export class ProductComponent {
     dialogRef.afterClosed().subscribe((result: any) => {
       if(result === "OK") {
         this.getProductList();
+        this.getEstadisticas();
       }
     });
   }
@@ -43,6 +48,20 @@ export class ProductComponent {
     this.productService.getProductsList().subscribe(
       (res:any) => {
         this.dataSource = res;
+      },
+      (error:any) => {
+        console.log(error);
+        this.snackBar.open(error.error.message, 'Close', {
+          duration: 3000
+        });
+      }
+    );
+  }
+
+  getEstadisticas() {
+    this.calculosService.getEstadisticas().subscribe(
+      (res:any) => {
+        this.estadisticas = res;
       },
       (error:any) => {
         console.log(error);
